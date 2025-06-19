@@ -15,7 +15,7 @@ services:
     depends_on:
       - sqlserver
     environment:
-      DB_HOST: sqlserver
+      DB_HOST: localhost
       DB_PORT: 1433
       DB_USER: sa
       DB_PASSWORD: sql
@@ -28,7 +28,7 @@ services:
     depends_on:
       - sqlserver
     environment:
-      DB_HOST: sqlserver
+      DB_HOST: localhost
       DB_PORT: 1433
       DB_USER: sa
       DB_PASSWORD: sql
