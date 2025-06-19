@@ -1,0 +1,15 @@
+{
+  "name": "employee-report",
+  "version": "1.0.0",
+  "description": "App consola para generar y enviar reporte de empleados",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "exceljs": "^4.3.0",
+    "mssql": "^10.0.0",
+    "nodemailer": "^6.9.5"
+  }
+}

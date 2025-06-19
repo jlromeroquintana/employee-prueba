@@ -1,0 +1,20 @@
+# Node
+node_modules/
+dist/
+.env
+.env.local
+*.log
+
+# Excel report
+reporte.xlsx
+
+# Editor
+.vscode/
+.DS_Store
+*.swp
+
+# Coverage
+coverage/
+
+# React
+build/

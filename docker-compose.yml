@@ -1,0 +1,47 @@
+version: '3.9'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "sql"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  api:
+    build: ./employee-api
+    depends_on:
+      - sqlserver
+    environment:
+      DB_HOST: sqlserver
+      DB_PORT: 1433
+      DB_USER: sa
+      DB_PASSWORD: sql
+      DB_DATABASE: EmployeeDB
+    ports:
+      - "3000:3000"
+
+  report:
+    build: ./employee-report
+    depends_on:
+      - sqlserver
+    environment:
+      DB_HOST: sqlserver
+      DB_PORT: 1433
+      DB_USER: sa
+      DB_PASSWORD: sql
+      DB_DATABASE: EmployeeDB
+      START_DATE: "2021-01-01"
+      END_DATE: "2022-12-31"
+      EMAIL_USER: "your_email@gmail.com"
+      EMAIL_PASS: "your_app_password"
+
+  frontend:
+    build: ./employee-frontend
+    ports:
+      - "3001:3000"
+
+volumes:
+  sql_data:
