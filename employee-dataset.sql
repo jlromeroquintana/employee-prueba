@@ -1,3 +1,8 @@
+CREATE DATABASE EmployeeDB
+GO
+
+USE EmployeeDB
+GO
 
 CREATE TABLE Employee (
     id INT PRIMARY KEY IDENTITY(1,1),
@@ -8,6 +13,7 @@ CREATE TABLE Employee (
     profile VARCHAR(50),
     admission_date DATE
 );
+GO
 
 INSERT INTO Employee (name, document_number, salary, age, profile, admission_date) VALUES
 ('Ana López', '12345678', 3500.00, 30, 'Analista', '2020-02-15'),
@@ -32,3 +38,4 @@ INSERT INTO Employee (name, document_number, salary, age, profile, admission_dat
 ('Jorge Salinas', '88990011', 4400.00, 33, 'Tech Lead', '2022-09-11'),
 ('Carmen Bravo', '99001122', 4000.00, 31, 'Backend Dev', '2022-10-29'),
 ('Renato Silva', '10111213', 4500.00, 37, 'DevOps', '2022-12-15');
+GO
